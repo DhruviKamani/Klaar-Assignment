@@ -12,7 +12,6 @@ public class HomePage extends BasePage<HomePage> {
 
 	@Override
 	public HomePage WaitForLoad() {
-		// TODO Auto-generated method stub
 		return this;
 	}
 }

@@ -11,25 +11,24 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import com.github.javafaker.Faker;
 
-public abstract class BaseTest
-{
+public abstract class BaseTest {
 	protected static WebDriver driver;
 	protected static Properties properties;
 	protected static Faker faker;
-	
+
 	@BeforeAll
 	public static void Initalize() throws IOException {
 		properties = new Properties();
 		properties.load(BaseTest.class.getResourceAsStream("/application.properties"));
-		
+
 		faker = new Faker();
-		
+
 		driver = new EdgeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get(properties.getProperty("baseUrl"));
 	}
-	
+
 	@AfterAll
 	public static void CleanUp() {
 		driver.quit();

@@ -10,25 +10,19 @@ public class LoginOptionsPage extends BasePage<LoginOptionsPage> {
 
 	public By loginKlaarLogo = By.cssSelector("[data-cy=\"login-klaar-logo\"]");
 	public By loginButtons = By.className("login-button");
-	
+
 	public LoginOptionsPage(WebDriver driver) {
 		super(driver);
 		System.out.println(wait);
-		
+
 	}
-	
-	private void ClickButtonWithText(String text)
-	{		
-		driver.findElements(loginButtons)
-		.stream()
-		.filter(e -> e.getText().equals(text))
-		.findFirst()
-		.orElseThrow()
-		.click();
+
+	private void ClickButtonWithText(String text) {
+		driver.findElements(loginButtons).stream().filter(e -> e.getText().equals(text)).findFirst().orElseThrow()
+				.click();
 	}
-	
-	public LoginPage LoginWithKlaar()
-	{
+
+	public LoginPage LoginWithKlaar() {
 		ClickButtonWithText("Log in with klaar");
 
 		return new LoginPage(driver);

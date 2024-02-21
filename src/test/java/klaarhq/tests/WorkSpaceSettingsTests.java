@@ -8,10 +8,9 @@ import klaarhq.base.BaseLoggedInTest;
 
 @TestMethodOrder(OrderAnnotation.class)
 public class WorkSpaceSettingsTests extends BaseLoggedInTest {
-	
+
 	@BeforeAll
-	public void navigate()
-	{
-		
+	public void navigate() {
+
 	}
 }
